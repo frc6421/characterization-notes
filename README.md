@@ -22,3 +22,16 @@ The characterization documentation doesn’t do a good job at explaining the not
   1.	Connect your computer directly to the RoboRIO using a USB cable.
   2.	Connect your computer to a Hot Spot that is not connected to the school Wi-Fi.  The school Wi-Fi will block the needed connection.
   3.	After a successful deploy you do not need to follow the two above notes as long as another program has not been deployed.
+
+## [Analyzing Data](https://docs.wpilib.org/en/latest/docs/software/pathplanning/robot-characterization/analyzing-data.html)
+If using WPILib Trajectory Following and RamateCommand for a drivetrain make the following changes when analyzing the data:
+- Undate "Units to "Meters"
+- Update "Units per rotation" to proper number based on wheel diameter
+  - 6 in dia. = 0.479 m 
+- Change "Gain Setting Preset" to "WPLILib (2020-)"
+- Change "Controller Type" to "Talon"
+- Change "Post Controller Gearing" to proper gear ratio
+- Change "Encoder EPR" to 2048 for Falcon 500 / TalonFX
+- Check the box for "Convert Gains"
+
+These changes appeared to work well for the updated 2020 robot.  There is a [screen capture](/DataAnalyze_20210704.png) showing the data analzysis tab for the characterization tool.
